@@ -106,7 +106,7 @@ footer{text-align:center;color:#999;font-size:12px;padding:40px 20px 50px}
 </section>
 
 <section class="cta">
-<a class="btn" href="#" data-hotmart-downsell="yes">Yes! Get my 50% discount</a>
+<a class="btn" href="#offer">Yes! Get my 50% discount</a>
 </section>
 
 <section class="price">
@@ -124,11 +124,19 @@ footer{text-align:center;color:#999;font-size:12px;padding:40px 20px 50px}
 <section class="final">
 <h2>YES! I want Catholic Seller Studio for just $7!</h2>
 <p>Complete your collection today and get more tools to bring your Catholic creations to life!</p>
-<!-- ====== HOTMART DOWNSELL SCRIPT / BUTTON: paste the downsell script here ====== -->
-<a class="btn" id="downsell-yes" href="#" data-hotmart-downsell="yes">Yes! Get my 50% discount</a>
-<!-- ====== /HOTMART DOWNSELL ====== -->
+<div id="offer">
+<!-- HOTMART - Sales Funnel Widget -->
+<!--- sales funnel container --->
+<div id="hotmart-sales-funnel"></div>
+
+<!--- script load and setup --->
+<script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
+<script>
+checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
+</script>
+<!-- HOTMART - Sales Funnel Widget -->
+</div>
 <p class="note">This special discounted offer is available on this page only. Don't miss your second chance!</p>
-<a class="decline" id="downsell-no" href="#">No thanks, I'll pass on this offer.</a>
 </section>
 </main>
 <footer>© Catholic Mega Pack</footer>
