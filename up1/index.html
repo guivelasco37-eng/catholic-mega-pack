@@ -77,11 +77,27 @@ footer{text-align:center;color:#999;font-size:12px;padding:40px 20px 50px}
 </div>
 <!-- ====== /VSL ====== -->
 
-<!-- ====== HOTMART UPSELL SCRIPT / BUTTON: paste the upsell script here ====== -->
+<!-- ====== HOTMART UPSELL (appears after 30s) ====== -->
 <section class="cta">
-  <a class="btn" id="upsell-yes" href="#" data-hotmart-upsell="yes">Yes! I want Catholic Seller Studio</a>
-  <a class="decline" id="upsell-no" href="/down/">No thanks, I'll pass on this offer.</a>
+  <p id="wait-note" style="text-align:center;font-size:14px;opacity:.75;margin:8px 0">Keep watching &mdash; your offer will appear right here in a moment&hellip;</p>
+  <div id="offer-box" style="display:none">
+    <!-- HOTMART - Sales Funnel Widget -->
+    <!--- sales funnel container --->
+    <div id="hotmart-sales-funnel"></div>
+    <!-- HOTMART - Sales Funnel Widget -->
+  </div>
 </section>
+<script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
+<script>
+(function(){
+  var DELAY=30000;
+  setTimeout(function(){
+    document.getElementById('wait-note').style.display='none';
+    document.getElementById('offer-box').style.display='block';
+    try{ checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel'); }catch(e){ console.error(e); }
+  }, DELAY);
+})();
+</script>
 <!-- ====== /HOTMART UPSELL ====== -->
 </main>
 <footer>© Catholic Mega Pack</footer>
