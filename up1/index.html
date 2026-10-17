@@ -79,7 +79,6 @@ footer{text-align:center;color:#999;font-size:12px;padding:40px 20px 50px}
 
 <!-- ====== HOTMART UPSELL (appears after 30s) ====== -->
 <section class="cta">
-  <p id="wait-note" style="text-align:center;font-size:14px;opacity:.75;margin:8px 0">Keep watching &mdash; your offer will appear right here in a moment&hellip;</p>
   <div id="offer-box" style="display:none">
     <!-- HOTMART - Sales Funnel Widget -->
     <!--- sales funnel container --->
@@ -92,7 +91,6 @@ footer{text-align:center;color:#999;font-size:12px;padding:40px 20px 50px}
 (function(){
   var DELAY=30000;
   setTimeout(function(){
-    document.getElementById('wait-note').style.display='none';
     document.getElementById('offer-box').style.display='block';
     try{ checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel'); }catch(e){ console.error(e); }
   }, DELAY);
